@@ -1,7 +1,7 @@
 ---
 title: NanoBot 学习进度板
 create_at: 2026-08-23
-update_at: 2026-08-23
+update_at: 2026-08-24
 tags: [AI, Agent, NanoBot, Progress]
 aliases: [NanoBot Progress]
 ---
@@ -14,11 +14,11 @@ aliases: [NanoBot Progress]
 |---|---|
 | 当前阶段 | 第 1 阶段：最小闭环 |
 | 当前章节 | 第 00 章：建立运行基线 |
-| 学习状态 | 未开始 |
+| 学习状态 | 进行中：已完成首次运行，正在确认环境边界 |
 | 每周预算 | 6～8 小时 |
 | 当前源码 | `main@9807e9cf37a5f5dcfad9dd86276dbda56e5363da` |
-| 下一个动作 | 阅读 [学习协议](learning-protocol.md)，然后开始 [第 00 章](chapters/00-建立运行基线.md) |
-| 好奇心停车场 | 暂无 |
+| 下一个动作 | 区分外层 Shell、NanoBot `.venv` 与 `nanobot` 可执行文件归属 |
+| 好奇心停车场 | 回答引用机制由哪个模块负责；官方 Wiki 与源码如何对应 |
 
 ## 章节进度
 
@@ -124,10 +124,11 @@ aliases: [NanoBot Progress]
 
 学习中发现但不属于当前章节的问题统一放在这里，复习周再处理。
 
-- [ ] 待记录
+- [ ] 回答引用机制由 Provider、Web Tool、Prompt 还是显示层负责？
+- [ ] 为 0.3.0 Wiki 的功能说明建立源码映射。
 
 ## 本周记录
 
 | 日期 | 学习块 | 产物 | 下一步 |
 |---|---:|---|---|
-|  |  |  |  |
+| 2026-08-24 | 首次运行 | 服务、本地模型和带引用回答均验证成功；发现可执行文件环境疑点 | 确认 `uv run` 与外层 Shell 的解释器/可执行文件归属 |
