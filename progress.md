@@ -1,7 +1,7 @@
 ---
 title: NanoBot 学习进度板
 create_at: 2026-08-23
-update_at: 2026-08-24
+update_at: 2026-08-25
 tags: [AI, Agent, NanoBot, Progress]
 aliases: [NanoBot Progress]
 ---
@@ -14,10 +14,10 @@ aliases: [NanoBot Progress]
 |---|---|
 | 当前阶段 | 第 1 阶段：最小闭环 |
 | 当前章节 | 第 00 章：建立运行基线 |
-| 学习状态 | 进行中：首次运行完成，安装与 WebUI 构建边界已厘清 |
+| 学习状态 | 进行中：安装来源、目标、editable 与 WebUI 构建边界已内化 |
 | 每周预算 | 6～8 小时 |
 | 当前源码 | `main@9807e9cf37a5f5dcfad9dd86276dbda56e5363da` |
-| 下一个动作 | 用一句话概括安装器、editable 源码安装与 WebUI bundle 的边界 |
+| 下一个动作 | 完成 Git commit/包版本、四个公开入口与 CLI entry point 的基线观察 |
 | 好奇心停车场 | 回答引用机制由哪个模块负责；官方 Wiki 与源码如何对应 |
 
 ## 章节进度
@@ -132,3 +132,4 @@ aliases: [NanoBot Progress]
 | 日期 | 学习块 | 产物 | 下一步 |
 |---|---:|---|---|
 | 2026-08-24 | 首次运行与安装诊断 | 服务、本地模型和引用回答验证成功；分离安装、TTY 向导和 WebUI bundle 三层问题 | 完成一句话骨架，再做一次环境路径验证 |
+| 2026-08-25 | Editable 安装边界内化 | 用 `uv pip show` 和 `direct_url.json` 证明源码关联；准确区分安装来源与目标 | 下次继续第 00 章的公开入口与 CLI entry point |
