@@ -1,13 +1,21 @@
 ---
-title: NanoBot 学习日志 YYYY-MM-DD ChXX
+title: NanoBot MXX ChXX LXX 小节名称
 create_at: YYYY-MM-DD
 update_at: YYYY-MM-DD
 tags: [AI, Agent, NanoBot, Learning-Log]
+module: XX
 chapter: XX
+lesson: XX
+order: MXX-ChXX-LXX
+learned_at: YYYY-MM-DD
 duration_minutes: 0
+status: in-progress
 ---
 
-# NanoBot 学习日志 YYYY-MM-DD · ChXX
+# MXX · ChXX · LXX｜小节名称
+
+> 学习日期：YYYY-MM-DD<br>
+> 上一节：LXX 标题 · 返回 ChXX · 下一节：LXX 标题
 
 ## 本次只解决一个问题
 
@@ -50,4 +58,3 @@ duration_minutes: 0
 - [ ] 待记录
 
 ## 下一次五分钟内可启动的动作
-

@@ -1,16 +1,24 @@
 ---
-title: NanoBot 学习日志 2026-08-26 Ch00 Typer、TUI 与公开入口
+title: NanoBot M01 Ch00 L05 Typer、TUI 与公开入口
 create_at: 2026-08-26
 update_at: 2026-08-26
 tags: [AI, Agent, NanoBot, Learning-Log, CLI, Typer, TUI, Gateway, WebUI]
+module: 01
 chapter: 00
+lesson: 05
+order: M01-Ch00-L05
+learned_at: 2026-08-26
 duration_minutes: null
 status: completed
 ---
 
-# NanoBot 学习日志 2026-08-26 · Ch00 Typer、TUI 与公开入口
+# M01 · Ch00 · L05｜Typer、TUI 与公开入口
 
-> 延续 [2026-08-25 运行基线复习与公开入口](2026-08-25-Ch00-运行基线复习与公开入口.md)。
+> 学习日期：2026-08-26<br>
+> 上一节：[L04 运行基线复习与 CLI 启动链](04-运行基线复习与CLI启动链.md) ·
+> [返回 Ch00](README.md) · [返回 M01](../README.md)
+
+> 延续 [L04 运行基线复习与 CLI 启动链](04-运行基线复习与CLI启动链.md)。
 > 本日志采用“完成一个小闭环就落盘”的方式维护，并已在第 00 章验收后完成整理。
 
 ## 今日目标

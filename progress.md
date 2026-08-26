@@ -12,7 +12,7 @@ aliases: [NanoBot Progress]
 
 | 项目 | 内容 |
 |---|---|
-| 当前阶段 | 第 1 阶段：最小闭环 |
+| 当前模块 | M01：最小闭环 |
 | 当前章节 | 第 01 章：一次完整 Agent Turn（待开始） |
 | 学习状态 | 第 00 章已完成：内容验收 5/5，统一解锁条件 4/5 |
 | 每周预算 | 6～8 小时 |
@@ -22,7 +22,7 @@ aliases: [NanoBot Progress]
 
 ## 章节进度
 
-### 阶段 1：最小闭环
+### 模块 M01：最小闭环
 
 - [x] 00 建立运行基线
 - [ ] 01 一次完整 Agent Turn
@@ -32,7 +32,7 @@ aliases: [NanoBot Progress]
 - [ ] 05 Mini Nanobot
 - [ ] 复习一
 
-### 阶段 2：上下文与状态
+### 模块 M02：上下文与状态
 
 - [ ] 06 ContextBuilder
 - [ ] 07 Templates、Skills 与 Runtime Context
@@ -42,7 +42,7 @@ aliases: [NanoBot Progress]
 - [ ] 11 Hook、Streaming、Checkpoint 与 Turn Delivery
 - [ ] 复习二
 
-### 阶段 3：工具与边界
+### 模块 M03：工具与边界
 
 - [ ] 12 Tool Contract、Schema、Registry 与 Loader
 - [ ] 13 Filesystem、Apply Patch、Search 与 File State
@@ -51,21 +51,21 @@ aliases: [NanoBot Progress]
 - [ ] 16 MCP、Agent Plugin、Skills 与 CLI Apps
 - [ ] 17 Subagent、Session Messaging 与 Runtime Control
 
-### 阶段 4：长程能力
+### 模块 M04：长程能力
 
 - [ ] 18 Sustained Goal 与 Long Task
 - [ ] 19 Cron、Trigger、Heartbeat 与 Automation Turn
 - [ ] 20 图片、附件与音频转录
 - [ ] 复习三
 
-### 阶段 5：模型运行时
+### 模块 M05：模型运行时
 
 - [ ] 21 Config Schema、Loader 与 Watcher
 - [ ] 22 Model Preset、Runtime、Registry 与 Factory
 - [ ] 23 Provider Base、OpenAI Compatible 与 Responses API
 - [ ] 24 Specialized Provider、OAuth、Fallback 与 Conversation State
 
-### 阶段 6：Channel 与 Gateway
+### 模块 M06：Channel 与 Gateway
 
 - [ ] 25 BaseChannel 与事件契约
 - [ ] 26 Channel Registry、Manager 与 Outbound Delivery
@@ -75,7 +75,7 @@ aliases: [NanoBot Progress]
 - [ ] 30 Gateway、Process Runtime、Lease 与 Pairing
 - [ ] 复习四
 
-### 阶段 7：公开入口与显示层
+### 模块 M07：公开入口与显示层
 
 - [ ] 31 Python SDK 与 OpenAI-compatible API
 - [ ] 32 Command Router 与 CLI
@@ -84,7 +84,7 @@ aliases: [NanoBot Progress]
 - [ ] 35 Components、Workbench 与 Settings
 - [ ] 36 构建、打包、部署、测试与安全总审计
 
-### 阶段 8：掌握验证
+### 模块 M08：掌握验证
 
 - [ ] 37 架构内扩展
 - [ ] 38 跨层故障诊断

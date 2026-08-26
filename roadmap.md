@@ -1,7 +1,7 @@
 ---
 title: NanoBot 44 周学习路线
 create_at: 2026-08-23
-update_at: 2026-08-23
+update_at: 2026-08-26
 tags: [AI, Agent, NanoBot, Roadmap]
 aliases: [NanoBot Roadmap]
 ---
@@ -16,7 +16,7 @@ aliases: [NanoBot Roadmap]
 - CLI 与 WebUI 放在最后，作为内部状态的显示与交互层学习。
 - 每章都要产生可以验证的作品，而不是只产生阅读时长。
 
-## 第 1 阶段：最小闭环（第 1～6 周）
+## 模块 M01：最小闭环（第 1～6 周）
 
 ### 第 00 章：固定版本、运行项目、建立观察基线
 
@@ -59,7 +59,7 @@ aliases: [NanoBot Roadmap]
 - 脱稿重画 Turn、Bus、Loop、Runner。
 - 给 Mini Agent 制造一个终止条件错误并定位原因。
 
-## 第 2 阶段：上下文与状态（第 8～13 周）
+## 模块 M02：上下文与状态（第 8～13 周）
 
 ### 第 06 章：ContextBuilder
 
@@ -97,7 +97,7 @@ aliases: [NanoBot Roadmap]
 - 从空白解释“模型这一次看到了什么”。
 - 做一个只读 Session/Context 检视器。
 
-## 第 3 阶段：工具与边界（第 15～20 周）
+## 模块 M03：工具与边界（第 15～20 周）
 
 ### 第 12 章：Tool Contract、Schema、Registry 与 Loader
 
@@ -129,7 +129,7 @@ aliases: [NanoBot Roadmap]
 - 子任务的创建、结果注入、并发、会话间消息与运行时控制。
 - 成果：追踪两个并行 Subagent 的结果如何回到父 Turn。
 
-## 第 4 阶段：长程能力（第 21～23 周）
+## 模块 M04：长程能力（第 21～23 周）
 
 ### 第 18 章：Sustained Goal 与 Long Task
 
@@ -151,7 +151,7 @@ aliases: [NanoBot Roadmap]
 - 将 Goal、Subagent、Cron、Trigger 统一描述为事件和状态机。
 - 解释取消、重试和重复投递之间的差异。
 
-## 第 5 阶段：模型运行时（第 25～28 周）
+## 模块 M05：模型运行时（第 25～28 周）
 
 ### 第 21 章：Config Schema、Loader 与 Watcher
 
@@ -173,7 +173,7 @@ aliases: [NanoBot Roadmap]
 - Anthropic、Azure、Bedrock、Codex、Copilot 等差异。
 - 成果：完成 [Provider 能力矩阵](templates/provider-matrix.md)。
 
-## 第 6 阶段：输入输出与常驻运行（第 29～34 周）
+## 模块 M06：输入输出与常驻运行（第 29～34 周）
 
 ### 第 25 章：BaseChannel 与事件契约
 
@@ -211,7 +211,7 @@ aliases: [NanoBot Roadmap]
 - 随机选择一个 Channel，端到端追踪消息。
 - 比较 Channel retry、Provider retry 和 Automation retry。
 
-## 第 7 阶段：公开入口与显示层（第 36～41 周）
+## 模块 M07：公开入口与显示层（第 36～41 周）
 
 ### 第 31 章：Python SDK 与 OpenAI-compatible API
 
@@ -243,7 +243,7 @@ aliases: [NanoBot Roadmap]
 - WebUI 产物进入 Wheel、CI、类型检查、部署和跨边界安全。
 - 成果：为一次跨层修改写出分层验证计划。
 
-## 第 8 阶段：掌握验证（第 42～44 周）
+## 模块 M08：掌握验证（第 42～44 周）
 
 ### 第 37 章：架构内扩展
 

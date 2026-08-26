@@ -3,12 +3,17 @@ title: NanoBot 第 00 章：建立运行基线
 create_at: 2026-08-23
 update_at: 2026-08-26
 tags: [AI, Agent, NanoBot, Chapter]
+module: 01
 chapter: 00
+order: M01-Ch00
 status: completed
 source_commit: 9807e9cf37a5f5dcfad9dd86276dbda56e5363da
 ---
 
 # NanoBot 第 00 章：建立运行基线
+
+> 课程位置：[M01 最小闭环](../README.md) → Ch00 · 顺序 01<br>
+> 小节顺序：L01 → L02 → L03 → L04 → L05
 
 ## 学习状态
 
@@ -65,7 +70,7 @@ flowchart LR
 
 ## 5. 建议观察顺序
 
-正式执行前，先根据 [学习协议](../learning-protocol.md) 用自己的话说明预期。命令由学习者亲手输入。
+正式执行前，先根据 [学习协议](../../../learning-protocol.md) 用自己的话说明预期。命令由学习者亲手输入。
 
 ### A. 记录只读版本信息
 
@@ -154,7 +159,7 @@ which nanobot
 - 观察到回答引用机制。
 - 找到与当前版本对应的[中文使用文档](https://nanobot.wiki/cn/docs/0.3.0/getting-started/nanobot-overview)。
 
-详细过程见 [2026-08-24 安装与首次运行日志](../notes/2026-08-24-Ch00-安装与首次运行.md)。
+详细过程见 [L01 安装与首次运行](01-安装与首次运行.md)。
 
 ### 2026-08-24 安装脚本与 WebUI 构建诊断
 
@@ -173,7 +178,7 @@ which nanobot
   `bun install` 可以做，但不是唯一方案；npm 也受支持。
 
 完整证据与调用链见
-[安装脚本、TTY 与 WebUI 构建日志](../notes/2026-08-24-Ch00-安装脚本TTY与WebUI构建.md)。
+[L02 安装脚本、TTY 与 WebUI 构建](02-安装脚本TTY与WebUI构建.md)。
 
 ### 2026-08-25 Editable 安装边界内化
 
@@ -184,7 +189,7 @@ which nanobot
 
 同时明确：editable 模式跳过的是 WebUI bundle 的生产构建，不是 NanoBot Python 源码
 安装。完整内化记录见
-[Editable 安装边界内化日志](../notes/2026-08-25-Ch00-Editable安装边界内化.md)。
+[L03 Editable 安装边界内化](03-Editable安装边界内化.md)。
 
 ### 2026-08-25～26 复习、CLI entry point 与公开入口
 
@@ -198,8 +203,8 @@ Shell → .venv/bin/nanobot → 项目 Python → nanobot.cli.entry:main
 同时区分了 CLI 命令入口、长期运行的 Gateway、OpenAI-compatible API server 与 WebUI
 浏览器客户端，并运行 `tests/cli/test_entry.py` 验证入口分流，结果为 `2 passed`。
 
-完整过程见[运行基线复习与公开入口](../notes/2026-08-25-Ch00-运行基线复习与公开入口.md)
-和[Typer、TUI 与公开入口](../notes/2026-08-26-Ch00-Typer-TUI与公开入口.md)。
+完整过程见[L04 运行基线复习与 CLI 启动链](04-运行基线复习与CLI启动链.md)
+和[L05 Typer、TUI 与公开入口](05-Typer-TUI与公开入口.md)。
 
 ## 7. 脱稿验收
 
@@ -216,14 +221,15 @@ Shell → .venv/bin/nanobot → 项目 Python → nanobot.cli.entry:main
 
 ## 8. 相关源码与笔记
 
-- [学习导读](../quickstart.md)
-- [44 周学习路线](../roadmap.md)
-- [源码地图](../source-map.md)
-- [2026-08-24 安装与首次运行日志](../notes/2026-08-24-Ch00-安装与首次运行.md)
-- [安装脚本、TTY 与 WebUI 构建日志](../notes/2026-08-24-Ch00-安装脚本TTY与WebUI构建.md)
-- [Editable 安装边界内化日志](../notes/2026-08-25-Ch00-Editable安装边界内化.md)
-- [运行基线复习与公开入口](../notes/2026-08-25-Ch00-运行基线复习与公开入口.md)
-- [Typer、TUI 与公开入口](../notes/2026-08-26-Ch00-Typer-TUI与公开入口.md)
+- [学习导读](../../../quickstart.md)
+- [课程顺序索引](../../README.md)
+- [44 周学习路线](../../../roadmap.md)
+- [源码地图](../../../source-map.md)
+- [L01 安装与首次运行](01-安装与首次运行.md)
+- [L02 安装脚本、TTY 与 WebUI 构建](02-安装脚本TTY与WebUI构建.md)
+- [L03 Editable 安装边界内化](03-Editable安装边界内化.md)
+- [L04 运行基线复习与 CLI 启动链](04-运行基线复习与CLI启动链.md)
+- [L05 Typer、TUI 与公开入口](05-Typer-TUI与公开入口.md)
 - `pyproject.toml`
 - `nanobot/cli/entry.py`
 - `nanobot/cli/commands.py`

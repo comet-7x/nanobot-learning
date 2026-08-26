@@ -1,7 +1,7 @@
 ---
 title: NanoBot 学习导读
 create_at: 2026-08-23
-update_at: 2026-08-23
+update_at: 2026-08-26
 tags: [AI, Agent, NanoBot, Python, Quickstart]
 aliases: [NanoBot Quickstart, NanoBot 导读]
 ---
@@ -106,8 +106,8 @@ Media、鉴权、Pairing、Retry、平台限制和测试位置。
 10. **为什么这样设计**。
 11. **本章涉及的核心元能力**。
 
-最后两个部分固定保留，且“核心元能力”是每章最后一节。正式章节从
-[章节模板](templates/chapter-template.md) 创建。
+最后两个部分固定保留，且“核心元能力”是每章最后一节。新章节从
+[章节模板](templates/chapter-template.md) 创建，并放入对应模块目录。
 
 ## 6. 耐心与延迟满足机制
 
@@ -148,9 +148,10 @@ Media、鉴权、Pairing、Retry、平台限制和测试位置。
 
 1. 打开 [学习进度板](progress.md)，填写本周可投入时间。
 2. 阅读 [学习协议](learning-protocol.md)，确认学习时的执行权与提示等级。
-3. 开始 [第 00 章](chapters/00-建立运行基线.md)。
-4. 每次学习后，从 [学习日志模板](templates/learning-note-template.md) 创建日志。
-5. 到复习周时，从 [复习模板](templates/review-template.md) 创建复习记录。
+3. 从[课程顺序索引](curriculum/README.md)进入当前模块与章节。
+4. 当前起点是 [M01 · Ch00：建立运行基线](curriculum/01-最小闭环/00-建立运行基线/README.md)。
+5. 每次学习后，从 [学习日志模板](templates/learning-note-template.md) 创建日志。
+6. 到复习周时，从 [复习模板](templates/review-template.md) 创建复习记录。
 
 后续与 AI 协作时，可以直接使用：`开始 NanoBot 第 00 章`、`继续 NanoBot 第 03 章`、
 `NanoBot 学习：卡住了`、`请给位置` 或 `请直接给答案`。

@@ -1,7 +1,7 @@
 ---
 title: NanoBot-Learning-MOC
 create_at: 2026-08-23
-update_at: 2026-08-23
+update_at: 2026-08-26
 tags: [MOC, AI, Agent, NanoBot, Python]
 aliases: [NanoBot 学习索引]
 ---
@@ -14,19 +14,21 @@ NanoBot 源仓库保持干净并持续跟随上游，大知识库只保留入口
 ## 从这里开始
 
 - [学习导读](quickstart.md)
+- [课程顺序索引](curriculum/README.md)
 - [44 周学习路线](roadmap.md)
 - [学习进度板](progress.md)
 - [学习协议](learning-protocol.md)
 - [源码地图与版本锚点](source-map.md)
 
-## 正式章节
+## 正式课程
 
-- [第 00 章：建立运行基线](chapters/00-建立运行基线.md)
-- 后续章节在开始学习时，从 [章节模板](templates/chapter-template.md) 创建。
+- [M01：最小闭环](curriculum/01-最小闭环/README.md)
+- [M01 · Ch00：建立运行基线](curriculum/01-最小闭环/00-建立运行基线/README.md)
+- 后续章节在开始学习时，从[章节模板](templates/chapter-template.md)创建，并放入对应模块目录。
 
 ## 记录与复习
 
-- [学习日志索引](notes/学习日志索引.md)
+- [按日期回看的学习日志索引](notes/学习日志索引.md)
 - [复习索引](reviews/复习索引.md)
 - [单次学习日志模板](templates/learning-note-template.md)
 - [复习模板](templates/review-template.md)

@@ -1,20 +1,28 @@
 ---
-title: NanoBot 学习日志 2026-08-25 Ch00 运行基线复习与公开入口
+title: NanoBot M01 Ch00 L04 运行基线复习与 CLI 启动链
 create_at: 2026-08-25
-update_at: 2026-08-25
+update_at: 2026-08-26
 tags: [AI, Agent, NanoBot, Learning-Log, Review, CLI, TTY]
+module: 01
 chapter: 00
+lesson: 04
+order: M01-Ch00-L04
+learned_at: 2026-08-25
 duration_minutes: null
 status: completed
 ---
 
-# NanoBot 学习日志 2026-08-25 · Ch00 运行基线复习与公开入口
+# M01 · Ch00 · L04｜运行基线复习与 CLI 启动链
+
+> 学习日期：2026-08-25<br>
+> 上一节：[L03 Editable 安装边界内化](03-Editable安装边界内化.md) · [返回 Ch00](README.md) ·
+> 下一节：[L05 Typer、TUI 与公开入口](05-Typer-TUI与公开入口.md)
 
 > 本日志采用“完成一个小闭环就落盘”的方式维护，并已在跨日学习结束后整理最终骨架、
 > “为什么这样设计”和“核心元能力”。
 
 > 跨日说明：8 月 25 日完成复习与 console-script 启动链；Typer、TUI、Gateway 和公开入口
-> 的后续学习记录在 [2026-08-26 日志](2026-08-26-Ch00-Typer-TUI与公开入口.md)。
+> 的后续学习记录在 [L05 Typer、TUI 与公开入口](05-Typer-TUI与公开入口.md)。
 
 ## 今日目标
 

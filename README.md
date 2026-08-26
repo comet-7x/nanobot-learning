@@ -10,19 +10,20 @@ Runtime。
 ## 从这里开始
 
 - [学习导读](quickstart.md)
+- [课程顺序索引](curriculum/README.md)
 - [44 周详细路线](roadmap.md)
 - [学习进度板](progress.md)
 - [源码学习协议](learning-protocol.md)
 - [源码地图与版本锚点](source-map.md)
-- [第 00 章：建立运行基线](chapters/00-建立运行基线.md)
+- [M01 · Ch00：建立运行基线](curriculum/01-最小闭环/00-建立运行基线/README.md)
 
 ## 仓库结构
 
 ```text
 .
-├── chapters/       # 正式章节
+├── curriculum/     # 按模块、章节、小节编号组织的正式课程
 ├── experiments/    # 学习实验说明与独立实验代码
-├── notes/          # 单次学习日志
+├── notes/          # 按日期回看的学习日志索引
 ├── reviews/        # D+1、D+7、D+30 与阶段复习
 ├── templates/      # 章节、日志、复习和能力矩阵模板
 ├── quickstart.md   # 总导读
@@ -30,6 +31,9 @@ Runtime。
 ├── progress.md     # 唯一进度事实来源
 └── source-map.md   # 上游版本与源码导航
 ```
+
+正式材料使用 `MXX-ChXX-LXX` 稳定编号，例如 `M01-Ch00-L03`。目录按模块和章节分层，
+小节文件使用 `01-`、`02-` 前缀排序；学习日期保留在文档元数据中。
 
 ## 学习边界
 
@@ -45,4 +49,3 @@ GitHub 和 Obsidian 中都可以导航。
 
 - 上游源码：[HKUDS/nanobot](https://github.com/HKUDS/nanobot)
 - 个人知识库：[comet-7x/My-NoteBook](https://github.com/comet-7x/My-NoteBook)
-

@@ -1,13 +1,22 @@
 ---
-title: NanoBot 学习日志 2026-08-25 Ch00 Editable 安装边界内化
+title: NanoBot M01 Ch00 L03 Editable 安装边界内化
 create_at: 2026-08-25
-update_at: 2026-08-25
+update_at: 2026-08-26
 tags: [AI, Agent, NanoBot, Learning-Log, Python, uv, Editable]
+module: 01
 chapter: 00
+lesson: 03
+order: M01-Ch00-L03
+learned_at: 2026-08-25
 duration_minutes: null
+status: completed
 ---
 
-# NanoBot 学习日志 2026-08-25 · Ch00 Editable 安装边界内化
+# M01 · Ch00 · L03｜Editable 安装边界内化
+
+> 学习日期：2026-08-25<br>
+> 上一节：[L02 安装脚本、TTY 与 WebUI 构建](02-安装脚本TTY与WebUI构建.md) ·
+> [返回 Ch00](README.md) · 下一节：[L04 运行基线复习与 CLI 启动链](04-运行基线复习与CLI启动链.md)
 
 ## 本次核心问题
 

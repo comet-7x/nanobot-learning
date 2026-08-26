@@ -3,12 +3,17 @@ title: NanoBot 第 XX 章：章节名称
 create_at: YYYY-MM-DD
 update_at: YYYY-MM-DD
 tags: [AI, Agent, NanoBot, Chapter]
+module: XX
 chapter: XX
+order: MXX-ChXX
 status: not-started
 source_commit: 9807e9cf37a5f5dcfad9dd86276dbda56e5363da
 ---
 
 # NanoBot 第 XX 章：章节名称
+
+> 课程位置：MXX 模块名称 → ChXX · 模块内顺序 XX<br>
+> 小节顺序：L01 → L02 → ...
 
 ## 学习状态
 

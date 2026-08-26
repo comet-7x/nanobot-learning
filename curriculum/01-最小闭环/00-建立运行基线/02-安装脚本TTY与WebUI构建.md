@@ -1,13 +1,22 @@
 ---
-title: NanoBot 学习日志 2026-08-24 Ch00 安装脚本、TTY 与 WebUI 构建
+title: NanoBot M01 Ch00 L02 安装脚本、TTY 与 WebUI 构建
 create_at: 2026-08-24
-update_at: 2026-08-24
+update_at: 2026-08-26
 tags: [AI, Agent, NanoBot, Learning-Log, Shell, TTY, WebUI]
+module: 01
 chapter: 00
+lesson: 02
+order: M01-Ch00-L02
+learned_at: 2026-08-24
 duration_minutes: null
+status: completed
 ---
 
-# NanoBot 学习日志 2026-08-24 · Ch00 安装脚本、TTY 与 WebUI 构建
+# M01 · Ch00 · L02｜安装脚本、TTY 与 WebUI 构建
+
+> 学习日期：2026-08-24<br>
+> 上一节：[L01 安装与首次运行](01-安装与首次运行.md) · [返回 Ch00](README.md) ·
+> 下一节：[L03 Editable 安装边界内化](03-Editable安装边界内化.md)
 
 ## 本次核心问题
 
@@ -165,4 +174,3 @@ Bun/npm 用于把 React/TypeScript 源码构建成静态 bundle；浏览器和 G
 
 长日志应先按阶段切分。安装成功、配置向导失败、前端 bundle 缺失可以连续出现，但它们
 分别属于包安装、终端交互和前端构建三个不同所有者。
-
