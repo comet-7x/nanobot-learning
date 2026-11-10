@@ -1,7 +1,7 @@
 ---
 title: NanoBot 源码地图与版本锚点
 create_at: 2026-08-23
-update_at: 2026-08-23
+update_at: 2026-11-10
 tags: [AI, Agent, NanoBot, Source-Map]
 aliases: [NanoBot Source Map]
 ---
@@ -13,15 +13,15 @@ aliases: [NanoBot Source Map]
 | 项目 | 值 |
 |---|---|
 | Upstream | `https://github.com/HKUDS/nanobot` |
-| 本地源码 | 学习者自己的 nanobot clone；每章开始时记录实际路径 |
+| 本地源码 | `/Users/comet/WorkSpace/Project/Python/nanobot`（`.venv` 已建，`import nanobot` 可用） |
 | 分支 | `main` |
-| Commit | `9807e9cf37a5f5dcfad9dd86276dbda56e5363da` |
-| 项目版本 | `0.3.0` |
-| 锚定日期 | `2026-08-23` |
+| Commit | `62c05e7f7e6573900af439047fe1579a03deea26` |
+| 项目版本 | `v0.4.1-32` |
+| 锚定日期 | `2026-11-10` |
 
 固定版本源码链接前缀：
 
-`https://github.com/HKUDS/nanobot/blob/9807e9cf37a5f5dcfad9dd86276dbda56e5363da/`
+`https://github.com/HKUDS/nanobot/blob/62c05e7f7e6573900af439047fe1579a03deea26/`
 
 ## 一次 Turn 的源码地图
 
@@ -87,3 +87,22 @@ flowchart LR
 | 日期 | 旧 Commit | 新 Commit | 影响章节 | 处理结果 |
 |---|---|---|---|---|
 | 2026-08-23 | — | `9807e9cf` | 初始基线 | 创建路线 |
+| 2026-11-10 | `9807e9cf`（0.3.0） | `62c05e7f`（v0.4.1-32） | Ch01~Ch03 已学章节；Ch04 起按新基线学 | 见下方漂移清单 |
+
+## 0.3.0 → v0.4.1 核心漂移清单（2026-11-10 核对）
+
+已学章节的概念笔记仍然有效，以下方法名/结构变化需要在对应章节学习时以新基线为准：
+
+| 位置 | 旧（0.3.0） | 新（v0.4.1） | 影响 |
+|---|---|---|---|
+| `agent/loop.py` | `_dispatch(msg)` | `_dispatch_one(msg)` | Ch03 L01/L02 笔记中的方法名 |
+| `agent/loop.py` | 七阶段内联在 `_process_message` | 抽出 `_run_turn_stage(ctx, name, fn)` 统一包装（restore/compact/command/build/run/save/respond 不变） | Ch01/Ch03 行号失效，阶段名不变 |
+| `agent/loop.py` | `_build_initial_messages` | `_build_transcript_input`（TranscriptInput） | Ch01 调用链 |
+| `agent/runner.py` | `_build_goal_continue_message` | `_build_continuation_message` | Ch04 学习时注意 |
+| `agent/runner.py` | — | 新增 `_emit_checkpoint`、`_append_model_error_placeholder` | Ch04/Ch11 新机制 |
+| `bus/` | `progress.py` 存在 | `progress.py` 删除，新增 `delivery.py`、`notification_delivery.py` | Ch02 出站事件结构 |
+| `bus/queue.py` | 114 行变化 | 队列实现重构 | Ch02 概念不变，实现细节以新基线为准 |
+
+未变化（已核对）：`consume_inbound`、`_effective_session_key`、`_get_session_lock`、
+`AgentRunSpec`/`AgentRunResult`、`AgentRunner.run/_run_core/_request_model/_execute_tools`、
+七阶段名称与顺序。

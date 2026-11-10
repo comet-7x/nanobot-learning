@@ -1,18 +1,23 @@
 ---
 title: NanoBot 第 03 章：AgentLoop
 create_at: 2026-08-27
-update_at: 2026-08-28
+update_at: 2026-11-10
 tags: [AI, Agent, NanoBot, Chapter, AgentLoop]
 module: 01
 chapter: 03
 order: M01-Ch03
 status: in-progress
-source_commit: 9807e9cf37a5f5dcfad9dd86276dbda56e5363da
+source_commit: 62c05e7f7e6573900af439047fe1579a03deea26
 ---
 
 # NanoBot 第 03 章：AgentLoop
 
 > 课程位置：[M01 最小闭环](../README.md) → Ch03 · 顺序 04
+>
+> [!NOTE]
+> 2026-11-10 基线重锚：本章 L01/L02 笔记写于 `9807e9cf`（0.3.0）。
+> 新基线 `62c05e7f`（v0.4.1-32）中 `_dispatch` 已改名 `_dispatch_one`，
+> 七阶段抽出 `_run_turn_stage` 统一包装。概念不变，行号与方法名以新基线为准。
 
 ## 本章只解决一个问题
 
@@ -21,7 +26,7 @@ AgentLoop 如何持续接收消息，同时保护 Session 顺序并把每条消�
 ```mermaid
 flowchart LR
     Q["Inbound Queue"] --> R["AgentLoop.run"]
-    R --> T["create_task(_dispatch)"]
+    R --> T["create_task(_dispatch_one)"]
     T --> S["按 Session 协调"]
     S --> P["_process_message"]
 ```

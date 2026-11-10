@@ -39,28 +39,24 @@ flowchart TD
     G -. "重新追踪端到端消息" .-> C
 ```
 
-当前学习基线是 NanoBot `0.3.0`、`main@9807e9cf`。本地快照中，Python 非测试代码
+当前学习基线是 NanoBot `v0.4.1-32`、`main@62c05e7f`（2026-11-10 重锚，原基线
+`0.3.0`/`9807e9cf` 的差异见 [源码地图](source-map.md)）。本地快照中，Python 非测试代码
 约 10.9 万行，Python 测试约 3.7 万行，WebUI TypeScript/TSX 约 9.4 万行。因此，
-44 周的稳定学习不是拖延，而是对项目规模的诚实估计。
+稳定学习不是拖延，而是对项目规模的诚实估计。
 
-## 3. 44 周阶段概览
+## 3. 阶段概览（v2 · 循环优先 · 清单驱动）
 
-| 周期 | 内容 | 阶段成果 |
+v2 路线不再绑定周次，改为清单驱动：完成一项后记录时间并勾选。
+
+| 阶段 | 内容 | 阶段成果 |
 |---|---|---|
-| 第 1～6 周 | 运行基线、一次 Turn、Bus、Loop、Runner、Mini Agent | 独立重写最小 Tool Calling Agent |
-| 第 7 周 | 第一次复习 | 脱稿画图并修复一个故意错误 |
-| 第 8～13 周 | Context、Templates、Session、Compaction、Memory、Streaming | 回答“模型这次究竟看见了什么” |
-| 第 14 周 | 第二次复习 | 完成 Session/Context 检视器 |
-| 第 15～20 周 | Tool、文件、Shell、Web、MCP、Plugin、Subagent | 完成一个带安全边界的自定义 Tool |
-| 第 21～23 周 | Goal、Cron、Trigger、Automation、多模态 | 让任务跨轮次、跨时间运行 |
-| 第 24 周 | 第三次复习 | 用状态机解释恢复与投递语义 |
-| 第 25～28 周 | Config、Model Runtime、Provider、Fallback | 同一脚本切换两个 Provider |
-| 第 29～34 周 | Channel、WebSocket、Gateway、Pairing | 完成客户端和 Channel 能力矩阵 |
-| 第 35 周 | 第四次复习 | 端到端追踪任意 Channel 消息 |
-| 第 36～41 周 | SDK、API、CLI、WebUI、构建与安全审计 | 从四种入口追踪同一个请求 |
-| 第 42～44 周 | 扩展、故障诊断、架构答辩 | 达到可修改、可维护的掌握程度 |
+| Phase 0 | 回归与重锚：提交笔记、对齐基线、回归复习 | 基线对齐，Ch01/Ch02 图能脱稿重画 |
+| Phase 1 | Ch03 收尾、Ch04 Runner、Ch05 Mini Agent、复习一 | 独立重写最小 Tool Calling Agent |
+| Phase 2 | Ch08 Session、Ch09 Compaction、Ch11 Hook/Checkpoint、复习二 | 回答“模型这次究竟看见了什么” |
+| Phase 3 | 从零实现 4 步 Agent Loop（毕业作品） | 一个可运行的自研 Agent Loop |
+| Phase 4 | M03~M08 按需外扩：工具、长程、Provider、Channel、显示层 | 达到可修改、可维护的掌握程度 |
 
-逐章内容和周次见 [44 周学习路线](roadmap.md)，勾选状态见 [学习进度板](progress.md)。
+逐阶段清单见 [学习路线 v2](roadmap.md)，勾选状态见 [学习进度板](progress.md)。
 
 ## 4. “学完整”的定义
 
@@ -111,13 +107,13 @@ Media、鉴权、Pairing、Retry、平台限制和测试位置。
 
 ## 6. 耐心与延迟满足机制
 
-每周固定三个 90 分钟学习块：
+v2 起改为清单驱动：不绑定周次，完成 roadmap 中任一项后记录时间并勾选。
 
-- 第一块：宏观图、运行观察和主路径追踪。
-- 第二块：关键实现与对应测试。
-- 第三块：小改动、测试和脱稿讲解。
-
-状态不好时只完成 20 分钟的最低学习量，不补课、不加倍、不从第一章重新开始。
+- 每个学习块约 90 分钟，结构不变：
+  - 第一块：宏观图、运行观察和主路径追踪。
+  - 第二块：关键实现与对应测试。
+  - 第三块：小改动、测试和脱稿讲解。
+- 状态不好时只完成 20 分钟的最低学习量，不补课、不加倍、不从第一章重新开始。
 
 每章只有满足以下五项中的四项才解锁下一章：
 
@@ -146,12 +142,13 @@ Media、鉴权、Pairing、Retry、平台限制和测试位置。
 
 ## 8. 如何开始
 
-1. 打开 [学习进度板](progress.md)，填写本周可投入时间。
+1. 打开 [学习进度板](progress.md)，确认当前阶段与下一个动作。
 2. 阅读 [学习协议](learning-protocol.md)，确认学习时的执行权与提示等级。
-3. 从[课程顺序索引](curriculum/README.md)进入当前模块与章节。
-4. 当前起点是 [M01 · Ch00：建立运行基线](curriculum/01-最小闭环/00-建立运行基线/README.md)。
-5. 每次学习后，从 [学习日志模板](templates/learning-note-template.md) 创建日志。
-6. 到复习周时，从 [复习模板](templates/review-template.md) 创建复习记录。
+3. 从 [学习路线 v2](roadmap.md) 找到当前阶段清单，按顺序取下一项。
+4. 从[课程顺序索引](curriculum/README.md)进入对应模块与章节。
+5. 每次学习后，从 [学习日志模板](templates/learning-note-template.md) 创建日志，
+   并在进度板"学习记录"中记录日期与产物。
+6. 到复习项时，从 [复习模板](templates/review-template.md) 创建复习记录。
 
 后续与 AI 协作时，可以直接使用：`开始 NanoBot 第 00 章`、`继续 NanoBot 第 03 章`、
 `NanoBot 学习：卡住了`、`请给位置` 或 `请直接给答案`。

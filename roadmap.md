@@ -1,265 +1,180 @@
 ---
-title: NanoBot 44 周学习路线
+title: NanoBot 学习路线（循环优先 · 清单驱动）
 create_at: 2026-08-23
-update_at: 2026-08-26
+update_at: 2026-11-10
 tags: [AI, Agent, NanoBot, Roadmap]
 aliases: [NanoBot Roadmap]
+version: v2
 ---
 
-# NanoBot 44 周学习路线
+# NanoBot 学习路线（v2 · 循环优先 · 清单驱动）
+
+> 本版本于 2026-11-10 重排。原 44 周固定排期改为**清单驱动**：不再绑定具体周次，
+> 每项完成后由学习者记录完成时间并勾选。重心调整为**先从循环入手，再一步一步向外扩展**。
 
 ## 路线原则
 
-- 从一次 Turn 的纵向切片开始，而不是按目录顺序阅读。
-- 每完成一层，都回到完整 Turn 中重新定位它。
-- 核心代码逐行学习，同构适配器使用代表深读和全量矩阵。
-- CLI 与 WebUI 放在最后，作为内部状态的显示与交互层学习。
-- 每章都要产生可以验证的作品，而不是只产生阅读时长。
-
-## 模块 M01：最小闭环（第 1～6 周）
-
-### 第 00 章：固定版本、运行项目、建立观察基线
-
-- 认识安装、配置、入口和测试命令。
-- 固定源码 commit，记录环境，不修改核心行为。
-- 成果：一份可复现的运行基线。
-
-### 第 01 章：一次完整 Agent Turn
-
-- 从 Channel 入站追踪到 Outbound 投递。
-- 先把 Context、Provider、Tool、Session 当作黑盒。
-- 成果：一张端到端 Turn 图和一份调用链表。
-
-### 第 02 章：MessageBus 与事件契约
-
-- 阅读 `bus/events.py`、`bus/queue.py` 和出站/进度事件。
-- 理解生产者—消费者、解耦、排队与并发。
-- 成果：手写最小异步消息总线。
-
-### 第 03 章：AgentLoop
-
-- 理解 session、workspace、runtime、command、dispatch 和 delivery 编排。
-- 区分 Channel-facing turn 与 model-facing loop。
-- 成果：能够解释任一入站消息走到哪个分支。
-
-### 第 04 章：AgentRunner
-
-- 理解模型请求、Tool Call、Observation、继续迭代与最终答案。
-- 学习重试、空响应、长度恢复、并发工具、注入和最大轮次。
-- 成果：从零写出简化 Runner 状态机。
-
-### 第 05 章：Mini Nanobot
-
-- 用 150～300 行 Python 组合 Bus、Runner、Provider Stub 和 Tool Registry。
-- 成果：一个带两个 Tool、会话历史和终止条件的 Mini Agent。
-
-## 第 7 周：复习一
-
-- 不阅读新模块。
-- 脱稿重画 Turn、Bus、Loop、Runner。
-- 给 Mini Agent 制造一个终止条件错误并定位原因。
-
-## 模块 M02：上下文与状态（第 8～13 周）
-
-### 第 06 章：ContextBuilder
-
-- 系统提示词、用户消息、图片附件、技能和工作区指令如何组合。
-- 成果：列出一次请求中每段上下文的所有权和生命周期。
-
-### 第 07 章：Templates、Skills 与 Runtime Context
-
-- Jinja2 Prompt、渐进式 Skills、动态 Request Context。
-- 成果：增加一段受控的运行时上下文并验证边界。
-
-### 第 08 章：Session Key 与 JSONL 持久化
-
-- Session 命名、缓存、元数据、fork、恢复与统一 Session。
-- 成果：解析并解释一份真实 Session 文件。
-
-### 第 09 章：Context Governance 与 Compaction
-
-- Token 估算、重放预算、上下文裁剪、摘要和空闲压缩。
-- 成果：构造一个超长会话并预测保留内容。
-
-### 第 10 章：Memory 与 Dream
-
-- Session 与长期 Memory 的区别。
-- Dream 的历史聚合、写入原子性与崩溃一致性。
-- 成果：画出 Session → History → Memory 的生命周期。
-
-### 第 11 章：Hook、Streaming、Checkpoint 与 Turn Delivery
-
-- 内容流、Reasoning 流、进度、文件编辑事件和中断恢复。
-- 成果：记录一次 Turn 的事件时间线。
-
-## 第 14 周：复习二
-
-- 从空白解释“模型这一次看到了什么”。
-- 做一个只读 Session/Context 检视器。
-
-## 模块 M03：工具与边界（第 15～20 周）
-
-### 第 12 章：Tool Contract、Schema、Registry 与 Loader
-
-- Tool 是如何声明、发现、注册、校验和暴露给模型的。
-- 成果：实现一个无副作用 Tool。
-
-### 第 13 章：Filesystem、Apply Patch、Search 与 File State
-
-- 路径解析、读写能力、Patch 语义和每 Session 文件状态。
-- 成果：实现一个受工作区限制的文件分析 Tool。
-
-### 第 14 章：Shell、Exec Session、取消与 Sandbox
-
-- 短命令、长运行会话、PTY、超时、取消和 bwrap。
-- 成果：画出命令从参数到子进程退出的完整状态机。
-
-### 第 15 章：Web Search、Fetch 与 SSRF
-
-- URL 解析、DNS/IP 防护、重定向、白名单和内容清洗。
-- 成果：设计一组恶意 URL 测试用例。
-
-### 第 16 章：MCP、Agent Plugin、Skills 与 CLI Apps
-
-- 代码能力、外部工具和工作流知识的不同扩展边界。
-- 成果：判断十个需求分别应放 Tool、Skill、MCP 还是 Plugin。
-
-### 第 17 章：Subagent、Session Messaging 与 Runtime Control
-
-- 子任务的创建、结果注入、并发、会话间消息与运行时控制。
-- 成果：追踪两个并行 Subagent 的结果如何回到父 Turn。
-
-## 模块 M04：长程能力（第 21～23 周）
-
-### 第 18 章：Sustained Goal 与 Long Task
-
-- Goal 状态、继续消息、预算、完成/阻塞与恢复。
-- 成果：用状态机解释长程目标。
-
-### 第 19 章：Cron、Trigger、Heartbeat 与 Automation Turn
-
-- 调度、at-least-once、Session 绑定、忙碌排队和结果投递。
-- 成果：完成一个可重复验证的定时任务。
-
-### 第 20 章：图片、附件与音频转录
-
-- 多模态输入、图像生成 Provider、媒体文件和转录注册表。
-- 成果：追踪一个媒体消息的端到端生命周期。
-
-## 第 24 周：复习三
-
-- 将 Goal、Subagent、Cron、Trigger 统一描述为事件和状态机。
-- 解释取消、重试和重复投递之间的差异。
-
-## 模块 M05：模型运行时（第 25～28 周）
-
-### 第 21 章：Config Schema、Loader 与 Watcher
-
-- Pydantic、camelCase alias、`${VAR}`、配置保存和热更新。
-- 成果：从配置字段追踪到运行时对象。
-
-### 第 22 章：Model Preset、Runtime、Registry 与 Factory
-
-- Provider 自动判断、Model Preset、Generation 参数和运行时切换。
-- 成果：预测不同配置组合最终选择的 Provider。
-
-### 第 23 章：Provider Base、OpenAI Compatible 与 Responses API
-
-- 消息转换、Tool Call、Streaming、Usage 和协议状态。
-- 成果：同一对话通过两个协议适配器运行。
-
-### 第 24 章：Specialized Provider、OAuth、Fallback 与 Conversation State
-
-- Anthropic、Azure、Bedrock、Codex、Copilot 等差异。
-- 成果：完成 [Provider 能力矩阵](templates/provider-matrix.md)。
-
-## 模块 M06：输入输出与常驻运行（第 29～34 周）
-
-### 第 25 章：BaseChannel 与事件契约
-
-- 外部平台如何翻译为统一 Inbound/Outbound Message。
-- 成果：实现一个内存 Channel。
-
-### 第 26 章：Channel Registry、Manager 与 Outbound Delivery
-
-- 自动发现、生命周期、流式合并、重试和错误隔离。
-- 成果：解释单个 Channel 崩溃为何不应拖垮 Agent Core。
-
-### 第 27 章：WebSocket Channel
-
-- 鉴权、多 Chat 复用、Typed Envelope、Streaming 和 WebUI 请求。
-- 成果：编写一个最小 WebSocket 客户端。
-
-### 第 28 章：Bot SDK Channel 家族
-
-- Telegram、Discord、Slack、QQ、NapCat 等代表实现。
-- 成果：按共同骨架和平台差异分类。
-
-### 第 29 章：企业、设备、联邦与邮件 Channel 家族
-
-- Feishu、DingTalk、WeCom、Teams、Mattermost、Weixin、WhatsApp、Signal、
-  Matrix、Email 等。
-- 成果：完成 [Channel 能力矩阵](templates/channel-matrix.md)。
-
-### 第 30 章：Gateway、Process Runtime、Lease 与 Pairing
-
-- Composition Root、前后台进程、客户端租约、启动关闭和访问审批。
-- 成果：画出 Gateway 进程与 Channel/Automation 的生命周期。
-
-## 第 35 周：复习四
-
-- 随机选择一个 Channel，端到端追踪消息。
-- 比较 Channel retry、Provider retry 和 Automation retry。
-
-## 模块 M07：公开入口与显示层（第 36～41 周）
-
-### 第 31 章：Python SDK 与 OpenAI-compatible API
-
-- SDK Facade、Session/Memory Client、HTTP、SSE 和模型列表。
-- 成果：同一个请求从 SDK 和 HTTP 发起。
-
-### 第 32 章：Command Router 与 CLI
-
-- Typer 入口、Onboarding、Gateway 命令、Slash Command 和 Terminal/TUI 边界。
-- 成果：从 CLI 参数追踪到 Agent Turn。
-
-### 第 33 章：WebUI Bootstrap 与 NanobotClient
-
-- HTTP Bootstrap、Token、WebSocket 生命周期和请求/响应关联。
-- 成果：画出浏览器建立连接的全过程。
-
-### 第 34 章：Stream Projection、Session 与活动状态
-
-- Delta、Reasoning、Tool Trace、文件编辑和 Turn End 如何投影成 UI 状态。
-- 成果：用事件序列预测页面状态。
-
-### 第 35 章：Components、Workbench 与 Settings
-
-- React 组件边界、Hooks、设置表单、工作区控制与懒加载。
-- 成果：完成一个小型可测试 UI 改动。
-
-### 第 36 章：构建、打包、部署、测试与安全总审计
-
-- WebUI 产物进入 Wheel、CI、类型检查、部署和跨边界安全。
-- 成果：为一次跨层修改写出分层验证计划。
-
-## 模块 M08：掌握验证（第 42～44 周）
-
-### 第 37 章：架构内扩展
-
-- 完成一个带测试、文档和安全说明的扩展能力。
-- 要求：不把边缘能力硬塞进 Agent Loop。
-
-### 第 38 章：跨层故障诊断
-
-- 从用户现象开始，只依靠日志、测试和源码定位问题。
-- 要求：先判断所有权，再进入具体实现。
-
-### 第 39 章：架构答辩
-
-- 脱稿讲解完整系统。
-- 回答如何增加 Provider、Tool、Channel、Skill、MCP、自动化和 UI 事件。
-- 写出“如果由我重新设计 NanoBot”的保留项与修改项。
+- **循环优先**：先把 AgentLoop + AgentRunner 这条"模型→工具→模型"的内核吃透，
+  再沿真实调用链向外扩到状态、工具、Provider、Channel、显示层。
+- **清单驱动**：每项是一个可独立完成、可验收的学习块。完成即勾选并记录时间，
+  不追赶"落后周数"，状态不好时只做 20 分钟最低量。
+- **每层回到完整 Turn 重新定位**：学完一层，回到一次完整 Turn 里确认它的位置。
+- **核心逐行、同构代表深读**：核心代码逐行，同构适配器用代表深读 + 全量矩阵。
+- **每章产生可验证作品**，而不是只产生阅读时长。
+
+## 当前基线
+
+| 项目 | 值 |
+|---|---|
+| 学习基线 commit | `62c05e7f7e6573900af439047fe1579a03deea26` |
+| 项目版本 | `v0.4.1-32` |
+| 锚定日期 | 2026-11-10 |
+| 上一基线 | `9807e9cf`（0.3.0，2026-08-23） |
+
+> 本地 nanobot clone 需 `git pull` 到 `62c05e7f7` 后再开始 Phase 1。
+> 新旧基线差异与受影响章节见 [源码地图](source-map.md)。
+
+## 阶段总览
+
+```mermaid
+flowchart LR
+    P0["Phase 0 回归与重锚"] --> P1["Phase 1 循环内核 M01"]
+    P1 --> P2["Phase 2 状态与恢复 M02"]
+    P2 --> P3["Phase 3 自己实现 Agent Loop"]
+    P3 --> P4["Phase 4 向外扩展 M03~M08"]
+```
+
+| 阶段 | 内容 | 里程碑 |
+|---|---|---|
+| Phase 0 | 提交笔记、重锚基线、回归复习、修正漂移 | 基线对齐、Ch01/Ch02 图能脱稿重画 |
+| Phase 1 | Ch03 收尾 → Ch04 Runner → Ch05 Mini → 复习一 | 独立重写最小 Tool Calling Agent |
+| Phase 2 | Ch08 Session → Ch09 Compaction → Ch11 Hook/Checkpoint → 复习二 | 回答"模型这次究竟看见了什么" |
+| Phase 3 | 从零实现 4 步 Agent Loop | 一个可运行的自研 Agent Loop |
+| Phase 4 | M03~M08 按需外扩 | 达到可修改、可维护的掌握程度 |
+
+---
+
+## Phase 0 · 回归与重锚
+
+> 目标：把 8 月中断前的进度接上，消除版本漂移，确认核心概念没丢。
+
+- [x] 提交 8-28 未提交的笔记（Ch01/Ch02/Ch03 材料、实验、D+1 复习、进度板）
+  - 完成时间：2026-11-10
+- [ ] 本地 nanobot clone `git pull` 到 `62c05e7f7`，确认 `import nanobot` 可用
+  - 完成时间：
+- [ ] 回归复习：脱稿重画 Ch01 完整 Turn 图 + Ch02 MessageBus 图，重评复习队列
+  - 完成时间：
+- [ ] 新旧基线 diff 核心文件（loop.py / runner.py / bus/），更新 [源码地图](source-map.md)
+  - 完成时间：
+- [ ] 修正 Ch03 笔记方法名漂移（`_dispatch` → `_dispatch_one`），更新 `source_commit`
+  - 完成时间：
+
+## Phase 1 · 循环内核（M01 最小闭环收尾）
+
+> 目标：吃透"模型→工具→模型"内核，能独立重写一个最小 Agent。
+
+- [ ] **Ch03 L03**：入站分支与聚焦测试（优先命令 / 活动 Session follow-up / 新 Turn 三分支）
+  - 产物：AgentLoop dispatch 地图
+  - 完成时间：
+- [ ] **Ch03 章节验收**：五项解锁标准至少四项为真
+  - 完成时间：
+- [ ] **Ch04 AgentRunner**：模型请求、Tool Call、Observation、继续迭代、最终答案；
+      重试、空响应、长度恢复、并发工具、注入、最大轮次
+  - 产物：从零写出简化 Runner 状态机
+  - 完成时间：
+- [ ] **Ch05 Mini Nanobot**：150~300 行组合 Bus、Runner、Provider Stub、Tool Registry
+  - 产物：带两个 Tool、会话历史和终止条件的 Mini Agent
+  - 完成时间：
+- [ ] **复习一**：脱稿重画 Turn、Bus、Loop、Runner；给 Mini Agent 制造一个终止条件错误并定位
+  - 完成时间：
+
+## Phase 2 · 状态与恢复（M02 核心）
+
+> 目标：回答"模型这一次究竟看见了什么"，掌握会话持久化与崩溃恢复。
+> Ch06/Ch07/Ch10 作为按需补充，不阻塞主线。
+
+- [ ] **Ch08 Session Key 与 JSONL 持久化**：命名、缓存、元数据、fork、恢复
+  - 产物：解析并解释一份真实 Session 文件
+  - 完成时间：
+- [ ] **Ch09 Context Governance 与 Compaction**：Token 估算、重放预算、裁剪、摘要、空闲压缩
+  - 产物：构造超长会话并预测保留内容
+  - 完成时间：
+- [ ] **Ch11 Hook、Streaming、Checkpoint 与 Turn Delivery**：内容流、进度、文件编辑事件、中断恢复
+  - 产物：记录一次 Turn 的事件时间线
+  - 完成时间：
+- [ ] **复习二**：从空白解释"模型这一次看到了什么"；做一个只读 Session/Context 检视器
+  - 完成时间：
+- [ ] （按需）Ch06 ContextBuilder / Ch07 Templates·Skills / Ch10 Memory·Dream
+  - 完成时间：
+
+## Phase 3 · 自己实现 Agent Loop（毕业作品）
+
+> 目标：不依赖 nanobot 源码，从零实现一个可运行的 Agent Loop。
+> 这是整个项目的核心里程碑，对应"先从循环入手"的最终验证。
+
+- [ ] **Step 1 最小内层循环**：模型 → 工具 → 模型闭环（OpenAI 兼容接口，约 150 行）
+  - 完成时间：
+- [ ] **Step 2 错误处理 + 流式**：空响应重试、finish_reason=length 续写、malformed tool call 降级、流式输出
+  - 完成时间：
+- [ ] **Step 3 Session + 持久化 / Checkpoint**：会话历史落盘、三相位 checkpoint、崩溃恢复
+  - 完成时间：
+- [ ] **Step 4 Mid-turn 注入 + Hook**：per-session 队列注入、调模型前/最终回复前 drain、hook 系统
+  - 完成时间：
+- [ ] **验收**：自研 Loop 与 nanobot 行为对照，写出差异与设计取舍
+  - 完成时间：
+
+## Phase 4 · 向外扩展（M03~M08 · 按需 backlog）
+
+> 目标：沿调用链向外扩到工具、长程、Provider、Channel、显示层。
+> 此阶段不绑定顺序与时间，按兴趣和需要从清单拉取。每项仍遵守学习协议。
+
+### M03 工具与边界
+
+- [ ] Ch12 Tool Contract、Schema、Registry 与 Loader
+- [ ] Ch13 Filesystem、Apply Patch、Search 与 File State
+- [ ] Ch14 Shell、Exec Session、取消与 Sandbox
+- [ ] Ch15 Web Search、Fetch 与 SSRF
+- [ ] Ch16 MCP、Agent Plugin、Skills 与 CLI Apps
+- [ ] Ch17 Subagent、Session Messaging 与 Runtime Control
+
+### M04 长程能力
+
+- [ ] Ch18 Sustained Goal 与 Long Task
+- [ ] Ch19 Cron、Trigger、Heartbeat 与 Automation Turn
+- [ ] Ch20 图片、附件与音频转录
+- [ ] 复习三：用状态机解释 Goal/Subagent/Cron/Trigger 的恢复与投递语义
+
+### M05 模型运行时
+
+- [ ] Ch21 Config Schema、Loader 与 Watcher
+- [ ] Ch22 Model Preset、Runtime、Registry 与 Factory
+- [ ] Ch23 Provider Base、OpenAI Compatible 与 Responses API
+- [ ] Ch24 Specialized Provider、OAuth、Fallback 与 Conversation State
+
+### M06 输入输出与常驻运行
+
+- [ ] Ch25 BaseChannel 与事件契约
+- [ ] Ch26 Channel Registry、Manager 与 Outbound Delivery
+- [ ] Ch27 WebSocket Channel
+- [ ] Ch28 Bot SDK Channel 家族
+- [ ] Ch29 企业、设备、联邦与邮件 Channel 家族
+- [ ] Ch30 Gateway、Process Runtime、Lease 与 Pairing
+- [ ] 复习四：随机选一个 Channel 端到端追踪消息
+
+### M07 公开入口与显示层
+
+- [ ] Ch31 Python SDK 与 OpenAI-compatible API
+- [ ] Ch32 Command Router 与 CLI
+- [ ] Ch33 WebUI Bootstrap 与 NanobotClient
+- [ ] Ch34 Stream Projection、Session 与活动状态
+- [ ] Ch35 Components、Workbench 与 Settings
+- [ ] Ch36 构建、打包、部署、测试与安全总审计
+
+### M08 掌握验证
+
+- [ ] Ch37 架构内扩展（带测试、文档、安全说明）
+- [ ] Ch38 跨层故障诊断（只靠日志、测试、源码定位）
+- [ ] Ch39 架构答辩（脱稿讲解 + 重新设计取舍）
 
 ## 最终完成标准
 
@@ -269,3 +184,11 @@ aliases: [NanoBot Roadmap]
 - 能定位长任务、流式输出、恢复和重复投递问题。
 - 能为修改选择正确的模块所有者和验证层级。
 - 能说明 NanoBot 当前设计的优势、限制与演进方向。
+- **能从零实现一个可运行的 Agent Loop（Phase 3 里程碑）。**
+
+## 附：原 44 周排期（历史参考）
+
+v1 的固定周次排期已废弃，仅保留章节与模块的对应关系供参考：
+M01 第 1~7 周、M02 第 8~14 周、M03 第 15~20 周、M04 第 21~24 周、
+M05 第 25~28 周、M06 第 29~35 周、M07 第 36~41 周、M08 第 42~44 周。
+章节内容与验收标准不变，执行方式改为上方清单驱动。

@@ -1,7 +1,7 @@
 ---
 title: NanoBot 学习进度板
 create_at: 2026-08-23
-update_at: 2026-08-28
+update_at: 2026-11-10
 tags: [AI, Agent, NanoBot, Progress]
 aliases: [NanoBot Progress]
 ---
@@ -12,15 +12,61 @@ aliases: [NanoBot Progress]
 
 | 项目 | 内容 |
 |---|---|
-| 当前模块 | M01：最小闭环 |
-| 当前章节 | 第 03 章：AgentLoop（L01～L02 已完成） |
+| 路线版本 | v2 · 循环优先 · 清单驱动（2026-11-10 重排） |
+| 当前阶段 | Phase 0：回归与重锚 |
+| 当前章节 | 第 03 章：AgentLoop（L01～L02 已完成，L03 待做） |
 | 学习状态 | 已理解 create_task、协作式并发及 per-session serial / cross-session concurrent |
-| 每周预算 | 6～8 小时 |
-| 当前源码 | `main@9807e9cf37a5f5dcfad9dd86276dbda56e5363da` |
-| 下一个动作 | 观察优先命令、活动 Session follow-up 与新 Turn 三个入站分支 |
+| 时间记录 | 清单驱动：完成一项后记录完成时间并勾选，不绑定周次 |
+| 当前源码 | `main@62c05e7f7e6573900af439047fe1579a03deea26`（v0.4.1-32） |
+| 下一个动作 | 本地 nanobot clone `git pull` 到 `62c05e7f7`，然后脱稿重画 Ch01/Ch02 图 |
 | 好奇心停车场 | 回答引用机制由哪个模块负责；官方 Wiki 与源码如何对应 |
 
-## 章节进度
+## 阶段清单（v2）
+
+完整清单见 [44 周学习路线 v2](roadmap.md)。此处只跟踪当前阶段。
+
+### Phase 0 · 回归与重锚
+
+- [x] 提交 8-28 未提交的笔记（2026-11-10）
+- [ ] 本地 nanobot clone `git pull` 到 `62c05e7f7`
+- [ ] 回归复习：脱稿重画 Ch01 Turn 图 + Ch02 Bus 图
+- [ ] 新旧基线 diff 核心文件，更新 [源码地图](source-map.md)
+- [ ] 修正 Ch03 笔记方法名漂移（`_dispatch` → `_dispatch_one`）
+
+### Phase 1 · 循环内核（M01 收尾）
+
+- [ ] Ch03 L03 入站分支与聚焦测试
+- [ ] Ch03 章节验收
+- [ ] Ch04 AgentRunner
+- [ ] Ch05 Mini Nanobot
+- [ ] 复习一
+
+### Phase 2 · 状态与恢复（M02 核心）
+
+- [ ] Ch08 Session Key 与 JSONL 持久化
+- [ ] Ch09 Context Governance 与 Compaction
+- [ ] Ch11 Hook、Streaming、Checkpoint 与 Turn Delivery
+- [ ] 复习二
+- [ ] （按需）Ch06 / Ch07 / Ch10
+
+### Phase 3 · 自己实现 Agent Loop（毕业作品）
+
+- [ ] Step 1 最小内层循环
+- [ ] Step 2 错误处理 + 流式
+- [ ] Step 3 Session + 持久化 / Checkpoint
+- [ ] Step 4 Mid-turn 注入 + Hook
+- [ ] 验收：与 nanobot 行为对照
+
+### Phase 4 · 向外扩展（M03~M08 · 按需 backlog）
+
+- [ ] M03 工具与边界（Ch12~Ch17）
+- [ ] M04 长程能力（Ch18~Ch20 + 复习三）
+- [ ] M05 模型运行时（Ch21~Ch24）
+- [ ] M06 输入输出与常驻运行（Ch25~Ch30 + 复习四）
+- [ ] M07 公开入口与显示层（Ch31~Ch36）
+- [ ] M08 掌握验证（Ch37~Ch39）
+
+## 章节进度（历史）
 
 ### 模块 M01：最小闭环
 
@@ -103,6 +149,7 @@ aliases: [NanoBot Progress]
 - [ ] SDK/API/CLI/WebUI 四入口追踪图
 - [ ] 可提交质量的扩展功能
 - [ ] 最终架构答辩文档
+- [ ] **自研 Agent Loop（Phase 3 毕业作品）**
 
 ## 单章解锁检查
 
@@ -118,9 +165,9 @@ aliases: [NanoBot Progress]
 
 | 知识点 | 最近复习 | 等级 | 下一次复习 | 薄弱点 |
 |---|---|---:|---|---|
-| Ch00 CLI 启动链与入口分流 | 2026-08-27 | 1：模糊 | 2026-08-30 | 入口加载成本误绑定为渲染/进程成本 |
-| Ch01 完整 Turn 主干 | 2026-08-28 | 2：清晰 | 2026-09-04（D+7） | 保留流式显示与持久化边界 |
-| Ch02 MessageBus 与事件契约 | 2026-08-28 | 2：清晰 | 2026-09-04（D+7） | 术语：Channel 适配器、进程内异步队列 |
+| Ch00 CLI 启动链与入口分流 | 2026-08-27 | 1：模糊 | 2026-08-30（已逾期，并入 Phase 0 回归复习） | 入口加载成本误绑定为渲染/进程成本 |
+| Ch01 完整 Turn 主干 | 2026-08-28 | 2：清晰 | 2026-09-04（已逾期，并入 Phase 0 回归复习） | 保留流式显示与持久化边界 |
+| Ch02 MessageBus 与事件契约 | 2026-08-28 | 2：清晰 | 2026-09-04（已逾期，并入 Phase 0 回归复习） | 术语：Channel 适配器、进程内异步队列 |
 
 ## 好奇心停车场
 
@@ -130,7 +177,9 @@ aliases: [NanoBot Progress]
 - [ ] 为 0.3.0 Wiki 的功能说明建立源码映射。
 - [ ] 异步测试前确认 dev extras 与 `pytest-asyncio` 已加载，消除 `asyncio_mode` 警告。
 
-## 本周记录
+## 学习记录
+
+> v2 起改为清单驱动：完成 roadmap 中任一项后，在此记录日期、学习块与产物。
 
 | 日期 | 学习块 | 产物 | 下一步 |
 |---|---:|---|---|
@@ -139,3 +188,4 @@ aliases: [NanoBot Progress]
 | 2026-08-26 | Typer、TUI、Gateway 与第 00 章验收 | 四入口关系图；`tests/cli/test_entry.py` 结果 `2 passed`；统一解锁 4/5 | D+1 主动回忆后开始第 01 章 |
 | 2026-08-27 | Ch00 D+1 + Ch01 L01～L03 + Ch02 L01～L03 | 完成 Turn 主干；掌握异步队列、事件契约并验证队列唤醒 | 进入 Ch03 AgentLoop |
 | 2026-08-28 | Ch03 L02 | 区分 session_key 的状态归属与 Session lock 的并发保护 | 追踪 AgentLoop 入站分支 |
+| 2026-11-10 | 路线重排 v2 + 基线重锚 | 提交 8-28 笔记；roadmap 改清单驱动；基线 0.3.0 → v0.4.1-32；漂移清单入 source-map | 本地 clone pull 到 62c05e7f7，回归复习 Ch01/Ch02 |

@@ -31,7 +31,7 @@ flowchart LR
 | 01 | [Ch00 建立运行基线](00-建立运行基线/README.md) | 已完成 | 可复现基线、入口地图 |
 | 02 | [Ch01 一次完整 Agent Turn](01-一次完整AgentTurn/README.md) | 已完成 | 端到端 Turn 图 |
 | 03 | [Ch02 MessageBus 与事件契约](02-MessageBus与事件契约/README.md) | 已完成 | 最小异步消息总线 |
-| 04 | [Ch03 AgentLoop](03-AgentLoop/README.md) | 进行中：L01 已完成 | 入站分支地图 |
+| 04 | [Ch03 AgentLoop](03-AgentLoop/README.md) | 进行中：L01～L02 已完成 | 入站分支地图 |
 | 05 | Ch04 AgentRunner | 未开始 | Runner 状态机 |
 | 06 | Ch05 Mini Nanobot | 未开始 | 150～300 行 Mini Agent |
 | 07 | 复习一 | 未开始 | 脱稿重画与故障定位 |

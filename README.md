@@ -1,17 +1,17 @@
 # nanobot-learning
 
-一套以源码为中心、持续 44 周的 [nanobot](https://github.com/HKUDS/nanobot)
+一套以源码为中心、清单驱动的 [nanobot](https://github.com/HKUDS/nanobot)
 学习项目。目标不是浏览完仓库，而是能够解释、修改、验证并维护一个完整的 Python Agent
-Runtime。
+Runtime，最终能从零实现一个可运行的 Agent Loop。
 
-当前学习基线：nanobot `0.3.0`，commit
-[`9807e9cf`](https://github.com/HKUDS/nanobot/tree/9807e9cf37a5f5dcfad9dd86276dbda56e5363da)。
+当前学习基线：nanobot `v0.4.1-32`，commit
+[`62c05e7f`](https://github.com/HKUDS/nanobot/tree/62c05e7f7e6573900af439047fe1579a03deea26)。
 
 ## 从这里开始
 
 - [学习导读](quickstart.md)
 - [课程顺序索引](curriculum/README.md)
-- [44 周详细路线](roadmap.md)
+- [学习路线 v2（循环优先 · 清单驱动）](roadmap.md)
 - [学习进度板](progress.md)
 - [源码学习协议](learning-protocol.md)
 - [源码地图与版本锚点](source-map.md)
@@ -27,7 +27,7 @@ Runtime。
 ├── reviews/        # D+1、D+7、D+30 与阶段复习
 ├── templates/      # 章节、日志、复习和能力矩阵模板
 ├── quickstart.md   # 总导读
-├── roadmap.md      # 44 周课程
+├── roadmap.md      # 学习路线 v2（循环优先 · 清单驱动）
 ├── progress.md     # 唯一进度事实来源
 └── source-map.md   # 上游版本与源码导航
 ```
