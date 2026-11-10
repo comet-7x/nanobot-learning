@@ -15,3 +15,7 @@ chXX-short-topic/
 └── tests/
 ```
 
+## 已完成实验
+
+- [Ch02 MessageBus 队列唤醒](ch02_message_bus_wakeup.py)：验证空队列等待、发布后唤醒、
+  对象引用传递与最终队列大小。

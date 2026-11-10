@@ -11,10 +11,9 @@ learned_at: 2026-08-24
 duration_minutes: null
 status: completed
 ---
-
 # M01 · Ch00 · L02｜安装脚本、TTY 与 WebUI 构建
 
-> 学习日期：2026-08-24<br>
+> 学习日期：2026-08-24
 > 上一节：[L01 安装与首次运行](01-安装与首次运行.md) · [返回 Ch00](README.md) ·
 > 下一节：[L03 Editable 安装边界内化](03-Editable安装边界内化.md)
 
