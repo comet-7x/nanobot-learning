@@ -31,7 +31,7 @@ version: v2
 | 锚定日期 | 2026-11-10 |
 | 上一基线 | `9807e9cf`（0.3.0，2026-08-23） |
 
-> 本地 nanobot clone 需 `git pull` 到 `62c05e7f7` 后再开始 Phase 1。
+> 本地 nanobot clone 已于 2026-11-10 同步到 `62c05e7f7`。
 > 新旧基线差异与受影响章节见 [源码地图](source-map.md)。
 
 ## 阶段总览
@@ -60,14 +60,14 @@ flowchart LR
 
 - [x] 提交 8-28 未提交的笔记（Ch01/Ch02/Ch03 材料、实验、D+1 复习、进度板）
   - 完成时间：2026-11-10
-- [ ] 本地 nanobot clone `git pull` 到 `62c05e7f7`，确认 `import nanobot` 可用
-  - 完成时间：
+- [x] 本地 nanobot clone `git pull` 到 `62c05e7f7`，确认 `import nanobot` 可用
+  - 完成时间：2026-11-10（已 pull 至 `62c05e7f7`，`.venv` 中 `import nanobot` 验证通过）
 - [ ] 回归复习：脱稿重画 Ch01 完整 Turn 图 + Ch02 MessageBus 图，重评复习队列
   - 完成时间：
-- [ ] 新旧基线 diff 核心文件（loop.py / runner.py / bus/），更新 [源码地图](source-map.md)
-  - 完成时间：
-- [ ] 修正 Ch03 笔记方法名漂移（`_dispatch` → `_dispatch_one`），更新 `source_commit`
-  - 完成时间：
+- [x] 新旧基线 diff 核心文件（loop.py / runner.py / bus/），更新 [源码地图](source-map.md)
+  - 完成时间：2026-11-10（漂移清单已入 source-map，关键方法名已对照新基线核实）
+- [x] 修正 Ch03 笔记方法名漂移（`_dispatch` → `_dispatch_one`），更新 `source_commit`
+  - 完成时间：2026-11-10（Ch03 README 已加基线重锚说明，`source_commit` 已更新）
 
 ## Phase 1 · 循环内核（M01 最小闭环收尾）
 

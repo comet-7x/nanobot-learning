@@ -18,7 +18,7 @@ aliases: [NanoBot Progress]
 | 学习状态 | 已理解 create_task、协作式并发及 per-session serial / cross-session concurrent |
 | 时间记录 | 清单驱动：完成一项后记录完成时间并勾选，不绑定周次 |
 | 当前源码 | `main@62c05e7f7e6573900af439047fe1579a03deea26`（v0.4.1-32） |
-| 下一个动作 | 本地 nanobot clone `git pull` 到 `62c05e7f7`，然后脱稿重画 Ch01/Ch02 图 |
+| 下一个动作 | 回归复习：脱稿重画 Ch01 Turn 图 + Ch02 Bus 图，重评复习队列 |
 | 好奇心停车场 | 回答引用机制由哪个模块负责；官方 Wiki 与源码如何对应 |
 
 ## 阶段清单（v2）
@@ -28,10 +28,10 @@ aliases: [NanoBot Progress]
 ### Phase 0 · 回归与重锚
 
 - [x] 提交 8-28 未提交的笔记（2026-11-10）
-- [ ] 本地 nanobot clone `git pull` 到 `62c05e7f7`
+- [x] 本地 nanobot clone `git pull` 到 `62c05e7f7`（2026-11-10，`import nanobot` 验证通过）
 - [ ] 回归复习：脱稿重画 Ch01 Turn 图 + Ch02 Bus 图
-- [ ] 新旧基线 diff 核心文件，更新 [源码地图](source-map.md)
-- [ ] 修正 Ch03 笔记方法名漂移（`_dispatch` → `_dispatch_one`）
+- [x] 新旧基线 diff 核心文件，更新 [源码地图](source-map.md)（2026-11-10）
+- [x] 修正 Ch03 笔记方法名漂移（`_dispatch` → `_dispatch_one`）（2026-11-10）
 
 ### Phase 1 · 循环内核（M01 收尾）
 
